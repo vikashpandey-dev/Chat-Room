@@ -1,0 +1,16 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100;0,200;1,100&family=Nunito:ital,wght@0,500;1,400&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;1,100;1,200;1,300;1,400&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;1,100;1,300;1,400&display=swap');
+body {
+  font-family: 'Roboto', sans-serif;
+  }
+  .text212121{
+    color: #212121;
+  }
+
+.w-45{
+width: 45%;
+}

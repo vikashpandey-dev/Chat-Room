@@ -1,0 +1,34 @@
+.setbge9edef{
+    background-color: #e9edef;
+}
+.setbgimahe{
+
+background-image: url("https://user-images.githubusercontent.com/15075759/28719144-86dc0f70-73b1-11e7-911d-60d70fcded21.png");
+width: 100%;
+height: 82vh;
+}
+.bg075E54{
+    background-color: #d9fdd3;
+}
+.ffff{
+    background: #ffff;
+}
+.max30{
+    max-width: 30%;
+}
+.leftradius{
+    border-bottom-left-radius: 0.5rem;
+}
+.rotate25{
+    rotate: 30deg;
+}
+.setinputbg{
+    background: #e9edef;
+}
+.gray{
+    color: gray;
+}
+.setscroll{
+    height: 78vh;
+    overflow-y: scroll;
+}

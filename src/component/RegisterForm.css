@@ -1,0 +1,19 @@
+.register-form-input {
+    width: 100%;
+    padding: 12px;
+    background-color: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 4px;
+    transition: border-color 0.3s ease, background-color 0.3s ease;
+  }
+  
+  .register-form-input:focus {
+    outline: none;
+    border-color: #3b82f6;
+    background-color: #fff;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.3);
+  }
+  .nonestyle{
+    text-decoration: none;
+list-style: none;
+}
