@@ -10,7 +10,7 @@ import Pages from "./pages/pages";
 import RegisterForm from "./component/RegisterForm";
 import Login from "./component/Login";
 import { useSelector, useDispatch } from "react-redux";
-
+import ChatUI from "./component/ChatUI";
 function App() {
   const loginuser = useSelector((state) => state.auth_reducer.toggle);
   const checkregister = useSelector(
@@ -30,6 +30,7 @@ function App() {
       ) : (
         <div>{loginuser == false ? <RegisterForm /> : null}</div>
       )}
+      {/* <ChatUI/> */}
     </>
   );
 }

@@ -1,0 +1,9 @@
+/* pages.css */
+
+/* Add responsive styles for medium-sized screens and larger */
+@media (max-width: 767px) {
+    .chat-container {
+      display: none; /* Hide the chat component on medium-sized screens and smaller */
+    }
+  }
+  
