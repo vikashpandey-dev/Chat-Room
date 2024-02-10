@@ -10,20 +10,18 @@ import { BsEmojiSmile } from "react-icons/bs";
 
 import { io } from "socket.io-client";
 import "./chat.css";
-import { Howl } from "howler";
+import { Howl } from "howler"; // Import Howl from 'howler' library
 import whatsappNotificationSound from "./whatsapp.mp3";
-
 function Chat() {
   const dispatch = useDispatch();
   const [message, setMessage] = useState("");
   const [messages, setMessages] = useState([]);
-  const [onlineuser, setOnlineuser] = useState([]);
+  const[onlineuser,setOnlineuser]=useState([])
   const [arrivalMessage, setArrivalMessage] = useState(null);
   const socket = useRef(io("http://localhost:5000", { withCredentials: true }));
   const chatBoxRef = useRef(null);
   let users = useSelector((state) => state.auth_reducer.SingleUser);
   const usermessage = useSelector((state) => state.auth_reducer.usermessage);
-
   useEffect(() => {
     // Scroll to the end of the chat box when messages change
     scrollToBottom();
@@ -36,9 +34,11 @@ function Chat() {
   };
 
   useEffect(() => {
+    // take userid and socket id
     let currentuser = {
       _id: localStorage.getItem("id"),
     };
+    // socket.current.emit("addUser",currentuser)
   }, []);
 
   useEffect(() => {
@@ -58,8 +58,9 @@ function Chat() {
 
   useEffect(() => {
     socket.current.emit("addUser", localStorage.getItem("id"));
-
-    socket.current.on("getMessage", (message) => {});
+    
+    socket.current.on("getMessage",(message)=>{
+    })
   }, []);
 
   useEffect(() => {
@@ -70,6 +71,7 @@ function Chat() {
   }, [dispatch]);
 
   const handleKeyPress = async (e) => {
+    
     if (e.key === "Enter") {
       const sound = new Howl({
         src: [whatsappNotificationSound],
@@ -100,19 +102,17 @@ function Chat() {
       setMessage("");
     }
   };
-
-  const gettimes = (teims) => {
-    let date = new Date(teims);
-    let hour = date.getHours();
-    let getminute = date.getMinutes();
-    return `${hour}:${getminute}`;
-  };
-
+  const gettimes=(teims)=>{
+    let date=new Date(teims)
+    let hour=date.getHours()
+    let getminute=date.getMinutes()
+    return `${hour}:${getminute}`
+  }
   return (
     <>
       <div className="">
         <div className="chattopp ">
-          <Chattop socket={socket} />
+          <Chattop socket={socket}/>
         </div>
 
         <div className="w-full h-full setbgimahe setscroll">
@@ -127,19 +127,15 @@ function Chat() {
               }
               key={index}
             >
-              <div
+              <p
                 className={
                   val.sender == localStorage.getItem("mobile")
-                    ? "bg075E54 max30 mr-12 p-1 rounded-br-lg  "
-                    : "ffff max30 ml-12 p-1  leftradius "
+                    ? " bg075E54  max30 mr-12 p-1 rounded-br-lg"
+                    : " ffff max30 ml-12 p-1  leftradius"
                 }
               >
-               <div className="flex px-2 gap-2"> <p>{val.message}</p>
-               <div className="">
-               <span className="text-xs mt-1">{gettimes(val.createdAt)}</span>
-                  <span className="ml-1">✓</span></div>
-               </div>
-              </div>
+                {val.message} <span className="text-xs mt-1">{ gettimes(val.createdAt)}</span>
+              </p>
             </div>
           ))}
         </div>
